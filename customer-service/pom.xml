@@ -15,8 +15,8 @@
 			<artifactId>spring-boot-starter-data-mongodb-reactive</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot.experimental</groupId>
-			<artifactId>spring-boot-starter-web-reactive</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
 			<exclusions>
 				<exclusion>
 					<groupId>org.springframework.boot</groupId>
@@ -27,10 +27,12 @@
 		<dependency>
 			<groupId>io.projectreactor.ipc</groupId>
 			<artifactId>reactor-netty</artifactId>
+			<version>0.7.0.M1</version>
 		</dependency>
 		<dependency>
 			<groupId>io.netty</groupId>
 			<artifactId>netty-all</artifactId>
+			<version>4.1.13.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>pl.piomin.services</groupId>
@@ -45,8 +47,15 @@
 		<dependency>
 			<groupId>io.projectreactor.addons</groupId>
 			<artifactId>reactor-test</artifactId>
+			<version>3.0.7.RELEASE</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>io.projectreactor</groupId>
+			<artifactId>reactor-core</artifactId>
+			<version>RELEASE</version>
+		</dependency>
+
 	</dependencies>
 
 </project>
