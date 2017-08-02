@@ -3,4 +3,7 @@ server:
   
 spring:  
   application:
-    name: account-service  
+    name: account-service
+
+
+spring.data.mongodb.host: 192.168.99.100

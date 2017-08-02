@@ -3,13 +3,16 @@ package pl.piomin.services.customer;
 import java.util.logging.Logger;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
 import pl.piomin.services.common.Customer;
 
-//@RunWith(SpringRunner.class)
-//@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class CustomerTest {
 
 	private static final Logger logger = Logger.getLogger("CustomerTest");
@@ -17,7 +20,7 @@ public class CustomerTest {
 	private WebClient webClient;
 
 
-	private int port = 8088;
+	private int port = 2223;
 
 	@Before
 	public void setup() {

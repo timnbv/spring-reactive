@@ -44,8 +44,9 @@ public class CustomerController {
                         .uri("/account/customer/{customer}", customer.getId())
                         .accept(MediaType.APPLICATION_JSON)
                         .exchange()
-                        .flatMap(response -> response.bodyToFlux(Account.class)))
-                .collectList()
+                        .log()
+                        .map(response -> response.bodyToFlux(Account.class)))
+                .block().collectList()
                 .map(l -> {
                     return new Customer(pesel, l);
                 });
