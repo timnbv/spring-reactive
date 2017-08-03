@@ -17,10 +17,11 @@ public class CustomerInit implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-        List<Customer> customers = Arrays.asList(new Customer("Ivan", "Petrov", "34241235123"),
-                new Customer("Sergey", "Ivanov", "34258363834"));
+        List<Customer> customers = Arrays.asList(new Customer("Ivan", "Petrov", "34241235123"));
+        System.out.println("Add customers");
         for (Customer customer : customers) {
-            repository.save(Mono.just(customer));
+            final Mono<Customer> newCustomer = repository.save(Mono.just(customer));
+            newCustomer.log().block();
         }
     }
 }

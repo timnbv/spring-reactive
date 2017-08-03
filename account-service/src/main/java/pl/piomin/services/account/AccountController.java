@@ -45,7 +45,7 @@ public class AccountController {
 	public Mono<Account> create(@RequestBody Publisher<Account> accountStream) {
 		return repository
 				.save(Mono.from(accountStream)
-						.map(a -> new pl.piomin.services.account.model.Account(a.getNumber(), a.getCustomerId(),
+						.map(a -> new Account(a.getNumber(), a.getCustomerId(),
 								a.getAmount())))
 				.map(a -> new Account(a.getId(), a.getCustomerId(), a.getNumber(), a.getAmount()));
 	}

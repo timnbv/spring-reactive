@@ -1,5 +1,6 @@
 package pl.piomin.services.customer;
 
+import java.util.Arrays;
 import java.util.logging.Logger;
 import org.reactivestreams.Publisher;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,10 +46,9 @@ public class CustomerController {
                         .accept(MediaType.APPLICATION_JSON)
                         .exchange()
                         .log()
-                        .map(response -> response.bodyToFlux(Account.class)))
-                .block().collectList()
+                        .flatMap(response -> response.bodyToMono(Account.class)))
                 .map(l -> {
-                    return new Customer(pesel, l);
+                    return new Customer(pesel, Arrays.asList(l));
                 });
     }
 

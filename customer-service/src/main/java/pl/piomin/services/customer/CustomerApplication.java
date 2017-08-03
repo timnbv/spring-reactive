@@ -11,18 +11,18 @@ import com.mongodb.reactivestreams.client.MongoClient;
 import com.mongodb.reactivestreams.client.MongoClients;
 
 @SpringBootApplication
-public class Application {
+public class CustomerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(CustomerApplication.class, args);
 	}
 
 	public @Bean MongoClient mongoClient() {
-		return MongoClients.create("mongodb://192.168.99.100");
+		return MongoClients.create("mongodb://localhost");
 	}
 
 	public @Bean ReactiveMongoTemplate reactiveMongoTemplate() {
-		return new ReactiveMongoTemplate(mongoClient(), "test");
+		return new ReactiveMongoTemplate(mongoClient(), "test1");
 	}
 
 	public @Bean WebClient webClient() {

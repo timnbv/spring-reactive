@@ -6,7 +6,8 @@ import static org.springframework.data.mongodb.core.query.Query.query;
 import static org.springframework.data.mongodb.core.query.Criteria.where;
 import org.springframework.stereotype.Repository;
 
-import pl.piomin.services.account.model.Account;
+
+import pl.piomin.services.common.Account;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

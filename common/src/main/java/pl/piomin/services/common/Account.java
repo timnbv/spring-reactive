@@ -10,6 +10,12 @@ public class Account {
 	public Account() {
 
 	}
+	public Account(String customerId, String number, int amount) {
+		this.id = id;
+		this.customerId = customerId;
+		this.number = number;
+		this.amount = amount;
+	}
 
 	public Account(String id, String customerId, String number, int amount) {
 		this.id = id;
